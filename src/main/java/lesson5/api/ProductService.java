@@ -6,20 +6,19 @@ import retrofit2.Call;
 import retrofit2.http.*;
 
 public interface ProductService {
-
-    @POST("products")
+    @POST("http://localhost:8189/market/api/v1/products")
     Call<Product> createProduct(@Body Product createProductRequest);
 
-    @DELETE("products/{id}")
+    @DELETE("http://localhost:8189/market/api/v1/products/{id}")
     Call<ResponseBody> deleteProduct(@Path("id") int id);
 
-    @PUT("products")
+    @PUT("http://localhost:8189/market/api/v1/products")
     Call<Product> modifyProduct(@Body Product modifyProductRequest);
 
-    @GET("products/{id}")
+    @GET("http://localhost:8189/market/api/v1/products/{id}")
     Call<Product> getProductById(@Path("id") int id);
 
-    @GET("products")
+    @GET("http://localhost:8189/market/api/v1/products")
     Call<ResponseBody> getProducts();
 
 }
